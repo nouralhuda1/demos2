@@ -1,0 +1,17 @@
+
+Week 1 Concepts1
+
+) Client-side vs Server-side-
+ Client-side: Code that runs in the user’s browser (HTML, CSS, JavaScript). Responsible for visuals, layout, and immediate user interaction.-
+ Server-side: Code that runs on the server (e.g., Node.js, PHP, Python). Responsible for data storage, authentication, and processing requests.2
+
+) Role of HTML, CSS, and JavaScript-
+ HTML: Provides structure (headings, paragraphs, images, links).-
+ CSS: Provides style (colors, fonts, layouts).-
+ JavaScript: Provides interactivity (form validation, animations, buttons).3
+
+) Purpose of the Folder Structure-
+ images/: stores all images used in the project.-
+ css/: stores stylesheets for consistent design.-
+ docs/: stores documentation files like this concepts.txt.T
+his organization makes the project easier to manage and maintain.
