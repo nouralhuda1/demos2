@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sajaa Ghazal Portfolio - Home</title>
-    <!-- Load Poppins and Montserrat from Google Fonts for better aesthetics -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom colors based on user request */
-        .dark-blue-bg { background-color: #0E2943; } /* A deep, professional navy blue */
-        .light-blue-text { color: #5B9DD9; } /* A bright, modern light blue */
-        .light-blue-accent { background-color: #DDEBF9; } /* Very light background for contrast */
-        /* Applying new fonts */
+        .dark-blue-bg { background-color: #0E2943; } /* Deep navy blue */
+        .light-blue-text { color: #5B9DD9; } /* Bright, modern light blue */
+        .light-blue-accent { background-color: #DDEBF9; } /* Very light blue */
+        /* Fonts */
         .font-poppins { font-family: 'Poppins', sans-serif; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        /* Table Styling */
+        .timetable-table th, .timetable-table td {
+            border: 1px solid #E5E7EB;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary-dark': '#0E2943', // Dark Blue
-                        'accent-light': '#5B9DD9', // Light Blue
+                        'primary-dark': '#0E2943',
+                        'accent-light': '#5B9DD9',
                     },
-                    /* Updating default font family in Tailwind config */
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
                     }
@@ -35,18 +38,14 @@
         }
     </script>
 </head>
-<!-- Applied Dark Blue Background to the whole body, setting Montserrat as the base font -->
+
 <body class="font-montserrat dark-blue-bg">
 
-    <!-- Navigation Bar -->
     <header class="dark-blue-bg shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Title/Logo Block with new small picture -->
             <div class="flex items-center space-x-2">
-                <!-- Small Picture Placeholder in Nav -->
                 <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-accent-light flex-shrink-0">
-                    <!-- IMPORTANT: Replace this placeholder URL with your actual image path -->
-                    <img src="https://placehold.co/32x32/0E2943/FFFFFF?text=S" alt="Sajaa Initial" class="w-full h-full object-cover">
+                    <img src="images/sajaas_pic.jpg" alt="Sajaa Initial" class="w-full h-full object-cover">
                 </div>
                 <div class="text-2xl font-poppins font-bold light-blue-text">
                     Sajaa Ghazal Portfolio
@@ -61,48 +60,90 @@
         </nav>
     </header>
 
-    <!-- Main Content - Hero Section -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <!-- Main card background is White for contrast and includes shadow -->
-        <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
-            
-            <!-- Large Picture Placeholder -->
-            <div class="mx-auto w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mb-8 border-4 border-accent-light shadow-xl">
-                <!-- IMPORTANT: Replace this placeholder URL with your actual image path -->
-                <img src="https://placehold.co/192x192/0E2943/FFFFFF?text=SAJAA" alt="Sajaa Ghazal Profile Picture" class="w-full h-full object-cover">
+        <section class="bg-white p-8 md:p-12 rounded-xl shadow-2xl mb-16">
+
+            <div class="mx-auto w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 border-4 border-accent-light shadow-xl">
+                <img src="images/sajaas_pic.jpg" alt="Sajaa Ghazal Profile Picture" class="w-full h-full object-cover">
             </div>
 
-            <!-- Introduction -->
             <h1 class="text-4xl md:text-6xl font-poppins font-bold text-primary-dark mb-3 leading-tight">
                 Hello, I'm <span class="light-blue-text">Sajaa Ghazal</span>
             </h1>
+
             <p class="text-xl md:text-2xl text-gray-700 font-montserrat mb-8">
                 Aspiring Web Developer
             </p>
 
-            <!-- Short Welcome Text -->
             <p class="text-lg text-gray-600 leading-relaxed mb-10">
                 Welcome to my portfolio! I am focused on creating meaningful and responsive digital experiences. Explore my About page to learn more about my skills, and visit the Contact page to get in touch.
             </p>
 
-            <!-- Call-to-Action Buttons (using light blue accent) -->
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <!-- About Button -->
-                <a href="about.html" class="inline-block px-8 py-3 text-lg font-semibold rounded-lg bg-accent-light text-primary-dark shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
-                    Learn About Me
-                </a>
-                <!-- Contact Button -->
-                <a href="contact.html" class="inline-block px-8 py-3 text-lg font-semibold rounded-lg bg-primary-dark text-white border-2 border-accent-light shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
-                    Contact Me
-                </a>
+            <a href="about.html" class="inline-block bg-accent-light text-primary-dark px-6 py-3 rounded-full font-semibold hover:opacity-90 transition duration-200 shadow-md">
+                Learn More About Me
+            </a>
+        </section>
+        
+        <section class="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-poppins font-bold text-primary-dark mb-6 border-b-2 border-accent-light pb-2">
+                University Course Timetable
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="timetable-table w-full text-sm text-gray-700">
+                    <caption class="text-lg font-semibold text-primary-dark mb-3">Fall Semester Schedule</caption>
+                    <thead>
+                        <tr class="bg-gray-100 font-bold text-primary-dark">
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-light-blue-accent/50">
+                            <td>9:00 - 10:30</td>
+                            <td>**Web Development**</td>
+                            <td>Calculus I</td>
+                            <td>**Web Development**</td>
+                            <td>Calculus I</td>
+                            <td></td>
+                        </tr>
+                        <tr class="hover:bg-light-blue-accent/50">
+                            <td>10:30 - 12:00</td>
+                            <td></td>
+                            <td>Physics Lab</td>
+                            <td></td>
+                            <td>Physics Lab</td>
+                            <td>Ethics in Tech</td>
+                        </tr>
+                        <tr class="hover:bg-light-blue-accent/50">
+                            <td>1:00 - 2:30</td>
+                            <td>Data Structures</td>
+                            <td>Elective Course</td>
+                            <td>Data Structures</td>
+                            <td>Elective Course</td>
+                            <td></td>
+                        </tr>
+                        <tr class="hover:bg-light-blue-accent/50">
+                            <td>2:30 - 4:00</td>
+                            <td></td>
+                            <td>**Programming**</td>
+                            <td></td>
+                            <td>**Programming**</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer (Dark Blue) -->
-    <footer class="mt-16 py-8 dark-blue-bg text-center">
-        <p class="text-gray-300 text-sm">&copy; 2025 Sajaa Ghazal. All rights reserved.</p>
+    <footer
+    class="text-center text-gray-400 py-6 border-t border-gray-700">
+        <p>&copy; 2025 Sajaa Ghazal. All rights reserved.</p>
     </footer>
 
 </body>
-</html> 
+</html>

@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sajaa Ghazal - Contact Info</title>
-    <!-- Load Poppins and Montserrat from Google Fonts for better aesthetics -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom colors based on user request */
@@ -17,6 +15,19 @@
         /* Applying new fonts */
         .font-poppins { font-family: 'Poppins', sans-serif; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        /* Table Styling for Contact Info */
+        .contact-table th, .contact-table td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .contact-table th {
+            width: 30%;
+            background-color: #DDEBF9; /* light-blue-accent */
+            font-weight: 600;
+        }
+        .contact-table tr:hover {
+            background-color: #F3F4F6; /* Light gray hover */
+        }
     </style>
     <script>
         tailwind.config = {
@@ -37,14 +48,10 @@
 </head>
 <body class="font-montserrat dark-blue-bg">
 
-    <!-- Navigation Bar -->
     <header class="dark-blue-bg shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Title/Logo Block with new small picture -->
             <div class="flex items-center space-x-2">
-                <!-- Small Picture Placeholder in Nav -->
                 <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-accent-light flex-shrink-0">
-                    <!-- IMPORTANT: Replace this placeholder URL with your actual image path -->
                     <img src="https://placehold.co/32x32/0E2943/FFFFFF?text=S" alt="Sajaa Initial" class="w-full h-full object-cover">
                 </div>
                 <div class="text-2xl font-poppins font-bold light-blue-text">
@@ -60,58 +67,42 @@
         </nav>
     </header>
 
-    <!-- Main Content - Contact Section -->
     <main class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <!-- Main card background is White for contrast and includes shadow -->
-        <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl space-y-8">
+        <section class="bg-white p-8 md:p-12 rounded-xl shadow-2xl space-y-8">
             
-            <!-- Title -->
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-primary-dark mb-6 text-center border-b-2 border-accent-light pb-2">
                 Get In Touch
             </h2>
 
-            <!-- Contact Information List (Vertical Stack) -->
-            <div class="space-y-4">
+            <table class="contact-table w-full border-collapse rounded-lg overflow-hidden shadow-lg text-primary-dark font-montserrat">
+                <caption class="text-lg font-semibold text-primary-dark mb-3">Professional Contact Details</caption>
                 
-                <!-- Email -->
-                <a href="mailto:sajaa.ghazale@gmail.com" class="block">
-                    <div class="light-blue-accent p-3 rounded-lg text-primary-dark font-semibold shadow-lg transition duration-300 hover:shadow-2xl">
-                        <p class="font-poppins text-xl">Email</p>
-                        <p class="font-montserrat text-sm text-gray-600 mt-1">sajaa.ghazale@gmail.com</p>
-                    </div>
-                </a>
-
-                <!-- Phone -->
-                <a href="tel:+21893849293" class="block">
-                    <div class="light-blue-accent p-3 rounded-lg text-primary-dark font-semibold shadow-lg transition duration-300 hover:shadow-2xl">
-                        <p class="font-poppins text-xl">Phone</p>
-                        <p class="font-montserrat text-sm text-gray-600 mt-1">+218 93849293</p>
-                    </div>
-                </a>
-
-                <!-- GitHub -->
-                <a href="#" class="block" target="_blank">
-                    <div class="light-blue-accent p-3 rounded-lg text-primary-dark font-semibold shadow-lg transition duration-300 hover:shadow-2xl">
-                        <p class="font-poppins text-xl">GitHub</p>
-                        <p class="font-montserrat text-sm text-gray-600 mt-1">Your GitHub Username Here</p>
-                    </div>
-                </a>
-
-                <!-- Instagram -->
-                <a href="#" class="block" target="_blank">
-                    <div class="light-blue-accent p-3 rounded-lg text-primary-dark font-semibold shadow-lg transition duration-300 hover:shadow-2xl">
-                        <p class="font-poppins text-xl">Instagram</p>
-                        <p class="font-montserrat text-sm text-gray-600 mt-1">Your Instagram Handle Here</p>
-                    </div>
-                </a>
-
-            </div>
-            <!-- End Contact Information List -->
-
-        </div>
+                <tbody>
+                    <tr>
+                        <th>Email</th>
+                        <td><a href="mailto:sajaa.ghazale@gmail.com" class="text-accent-light hover:underline">sajaa.ghazale@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td><a href="tel:+21893849293" class="text-primary-dark hover:underline">+218 93849293</a></td>
+                    </tr>
+                    <tr>
+                        <th>LinkedIn</th>
+                        <td><a href="#" class="text-accent-light hover:underline" target="_blank">Your LinkedIn Profile</a></td>
+                    </tr>
+                    <tr>
+                        <th>GitHub</th>
+                        <td><a href="#" class="text-accent-light hover:underline" target="_blank">Your GitHub Username Here</a></td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td><a href="#" class="text-primary-dark hover:underline" target="_blank">Your Instagram Handle Here</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            </section>
     </main>
 
-    <!-- Footer (Dark Blue) -->
     <footer class="mt-16 py-8 dark-blue-bg text-center">
         <p class="text-gray-300 text-sm">&copy; 2025 Sajaa Ghazal. All rights reserved.</p>
     </footer>
