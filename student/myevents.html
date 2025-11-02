@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>University Event Portal</h1>
+        <nav>
+            <a href="03_student_dashboard.html">Dashboard</a> |
+            <a href="myevents.html">Create Event</a> |
+            <a href="available_events.html">Available Events</a>
+        </nav>
+        <hr>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <h2>Create an Event</h2>
+
+        <form id="eventForm">
+            <label for="eventTitle">Event Title:</label><br>
+            <input type="text" id="eventTitle" name="eventTitle" required><br><br>
+
+            <label for="eventDescription">Description:</label><br>
+            <textarea id="eventDescription" name="eventDescription" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="eventTime">Time:</label><br>
+            <input type="time" id="eventTime" name="eventTime" required><br><br>
+
+            <label for="eventHall">Select Hall:</label><br>
+            <select id="eventHall" name="eventHall" required>
+                <option value="">-- Choose a hall --</option>
+                <option value="Hall 1">Hall 1</option>
+                <option value="Hall 2">Hall 2</option>
+                <option value="Hall 3">Hall 3</option>
+                <option value="Hall 4">Hall 4</option>
+                <option value="Hall 5">Hall 5</option>
+            </select><br><br>
+
+            <label for="eventDate">Date:</label><br>
+            <input type="date" id="eventDate" name="eventDate" required><br>
+            <p id="dateStatus"></p>
+
+            <button type="submit">Create Event</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <hr>
+    <footer>
+        <p>&copy; 2025 University Event Portal. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="student.js"></script>
+</body>
+</html>

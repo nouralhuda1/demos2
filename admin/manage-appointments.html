@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments - Admin Panel</title>
+    <!-- Link to Admin CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="manage-events.html">Manage Events</a></li>
+                <li><a href="manage-appointments.html" class="active">Manage Appointments</a></li>
+                <li><a href="manages-halls.html">Manage Halls</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <h1>Appointments</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Applicant</th>
+                    <th>Date & Time</th>
+                    <th>Event</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Oct 26, 2025, 10:00 AM</td>
+                    <td>Workshop</td>
+                    <td>Pending</td>
+                    <td>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mary Jane</td>
+                    <td>Oct 28, 2025, 2:00 PM</td>
+                    <td>Seminar</td>
+                    <td>Pending</td>
+                    <td>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 University Event Portal - Admin Panel</p>
+    </footer>
+
+    <!-- JS Link -->
+    <script src="assets/js/admin.js"></script>
+    <script>
+        // Logout functionality
+        document.getElementById("logoutBtn").addEventListener("click", function(e) {
+            e.preventDefault();
+
+            // Optional: clear session or local data if used later
+            sessionStorage.clear();
+            localStorage.clear();
+
+            // Redirect to login page
+            window.location.href = "admin_login.html";
+        });
+    </script>
+        <!-- Link unified JS for all admin pages -->
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
+
+</body>
+</html>

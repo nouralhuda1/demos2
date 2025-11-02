@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - University Event Portal</title>
+    <!-- Link the dark admin CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="login-page">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <nav>
+            <h2 class="logo">University Event Portal</h2>
+
+        </nav>
+    </header>
+
+    <!-- LOGIN CARD -->
+    <main>
+        <div class="card login-card">
+            <div class="card-body">
+                <h1 class="text-center">Admin Login</h1>
+                <form id="adminLoginForm">
+                    <div class="mb-3">
+                        <label for="adminUsername" class="form-label">Username</label>
+                        <input type="text" id="adminUsername" class="form-control" placeholder="Enter username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="adminPassword" class="form-label">Password</label>
+                        <input type="password" id="adminPassword" class="form-control" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="admin-footer">
+        <p>© 2025 University Event Portal. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+
+    <!-- Link minimal JS -->
+    <script src="assets/js/admin.js"></script>
+    <script>
+        // Minimal login logic
+        document.getElementById("adminLoginForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const username = document.getElementById("adminUsername").value.trim();
+            const password = document.getElementById("adminPassword").value.trim();
+
+            // Simple admin login
+            if(username === "admin" && password === "admin123"){
+                window.location.href = "admin/dashboard.html"; // redirect to dashboard in admin folder
+            } else {
+                alert("Invalid credentials!");
+            }
+        });
+    </script>
+        <!-- Link unified JS for all admin pages -->
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
+
+</body>
+</html>

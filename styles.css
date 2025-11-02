@@ -1,0 +1,300 @@
+
+/*
+    ========================================
+    Portal Styling and Theme Switching
+    STUDENT 3 TASK: Responsible for all visual design, colors, and theming.
+    ========================================
+*/
+
+/* --- 1. Global Setup and Typography --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --header-height: 70px; /* Fixed height for the main navbar */
+    --sidebar-width: 250px;
+    --footer-height: 50px;
+}
+
+body {
+    font-family: var(--font-family);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/* --- 2. Color Variables for Theming (Crucial for Teacher Requirement) --- */
+
+/* BRIGHT THEME (Student/Guest - Default) */
+.student-layout {
+    --color-primary: #4F46E5; /* Indigo-600 */
+    --color-secondary: #6366F1; /* Indigo-500 */
+    --color-background: #F8FAFC; /* Light Blue-50 */
+    --color-surface: #FFFFFF;
+    --color-text: #1E293B; /* Slate-800 */
+    --color-sidebar-bg: #FFFFFF;
+    --color-card-shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* DARK THEME (Admin - Teacher Requirement) */
+.admin-layout {
+    --color-primary: #FBBF24; /* Amber-400 (Warning color) */
+    --color-secondary: #FDE68A; /* Amber-200 */
+    --color-background: #1F2937; /* Dark Gray-800 */
+    --color-surface: #374151; /* Dark Gray-700 */
+    --color-text: #F3F4F6; /* Gray-100 */
+    --color-sidebar-bg: #111827; /* Dark Gray-900 */
+    --color-card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Apply variables to common elements */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.card {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px var(--color-card-shadow);
+}
+
+/* --- 3. Custom Bootstrap Overrides & Utility Classes --- */
+.btn-indigo {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.btn-indigo:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+/* --- 4. Layout Structure (Flexbox/Grid and Responsiveness) --- */
+
+/* Student/Guest Layout */
+#site-wrapper-grid {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr; /* Sidebar and main content */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding-top: var(--header-height);
+}
+
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; /* Above sidebar */
+    background-color: var(--color-surface);
+}
+
+/* Admin Layout (No Top Navbar, so wrapper fills full height) */
+.admin-layout #wrapper {
+    display: flex;
+    min-height: calc(100vh - 58px); /* Account for the admin-header */
+    padding-top: 0;
+}
+.admin-layout #admin-header {
+    background-color: #1E293B; /* Slate-800, darker for admin header */
+}
+
+
+/* --- 5. Sidebar Styling --- */
+#sidebar-menu, #admin-sidebar {
+    background-color: var(--color-sidebar-bg);
+    height: 100%;
+    position: fixed; /* For student layout, fixed under header */
+    top: var(--header-height);
+    left: 0;
+    width: var(--sidebar-width);
+    overflow-y: auto;
+    z-index: 1020;
+    padding-top: 2rem !important;
+}
+
+.admin-layout #admin-sidebar {
+    top: 58px; /* Fixed under admin-header */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Links (Shared) */
+.nav-link-sidebar, .sidebar-item {
+    color: var(--color-text);
+    padding: 0.75rem 1rem !important;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link-sidebar:hover, .sidebar-item:hover {
+    background-color: rgba(var(--color-primary), 0.1);
+    color: var(--color-primary);
+}
+
+.nav-link-sidebar.active, .sidebar-item.active {
+    background-color: var(--color-primary);
+    color: white !important;
+}
+
+/* Admin Sidebar Specific Styling */
+.admin-layout .sidebar-item {
+    color: var(--color-text); /* White text */
+}
+.admin-layout .sidebar-item.active {
+    background-color: var(--color-primary); /* Amber background for active */
+    color: #111827 !important; /* Dark text on amber */
+}
+
+/* --- 6. Admin Table Styling (Teacher Requirement: Darker Look) --- */
+.admin-layout #admin-content {
+    background-color: var(--color-background); /* Dark background */
+    margin-left: var(--sidebar-width); /* Push content past the sidebar */
+}
+
+.admin-layout .admin-table-card {
+    background-color: var(--color-surface);
+    border: none;
+}
+
+.admin-layout .table-dark {
+    --bs-table-bg: #374151; /* Card Surface */
+    --bs-table-striped-bg: #2C3745; /* Slightly lighter row */
+    --bs-table-hover-bg: #4B5563; /* Hover effect */
+    --bs-table-color: var(--color-text); /* White/light text */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #4B5563;
+}
+
+.admin-layout .admin-input {
+    background-color: #4B5563;
+    color: var(--color-text);
+    border-color: #4B5563;
+}
+.admin-layout .admin-input::placeholder {
+    color: #9CA3AF; /* Light gray placeholder */
+}
+
+
+/* --- 7. Event Cards Styling (Teacher Requirement: Separation) --- */
+
+.event-card {
+    border-radius: 0.75rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Uni-Hosted Events (Styled to stand out) */
+.event-card.uni-hosted {
+    border: 2px solid #10B981; /* Emerald border */
+}
+
+/* Student-Hosted Events (Simple primary color border) */
+.event-card.student-hosted {
+    border: 2px solid var(--color-primary);
+}
+
+
+/* --- 8. Interactive Picture Grid (Teacher Requirement: Overlapping Images) --- */
+.overlapping-gallery {
+    position: relative;
+    height: 300px; /* Define space for overlapping */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-image {
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid var(--color-surface);
+    transition: transform 0.4s, z-index 0.4s;
+    cursor: pointer;
+}
+
+/* Define overlap positions */
+.img-1 {
+    top: 20px;
+    left: 10%;
+    z-index: 4;
+}
+.img-2 {
+    top: 80px;
+    left: 30%;
+    z-index: 3;
+}
+.img-3 {
+    top: 40px;
+    left: 50%;
+    z-index: 2;
+}
+.img-4 {
+    top: 100px;
+    left: 70%;
+    z-index: 1;
+}
+
+/* Interactive Hover Effect */
+.gallery-image:hover {
+    transform: scale(1.1) rotate(-2deg);
+    z-index: 10; /* Bring to front on hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 9. Mobile Responsiveness (Media Queries) --- */
+
+@media (max-width: 992px) { /* Tablet and below */
+    :root {
+        --sidebar-width: 200px; /* Slightly smaller sidebar */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+
+    /* Hide Sidebar for Mobile View */
+    #site-wrapper-grid {
+        grid-template-columns: 1fr; /* Main content only */
+    }
+    #sidebar-menu, #admin-sidebar {
+        display: none; /* Hide sidebar completely */
+    }
+    #main-content, #admin-content {
+        margin-left: 0; /* No margin needed */
+    }
+    
+    /* Center the login and registration forms */
+    .card {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Adjust overlapping grid for smaller screens */
+    .overlapping-gallery {
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gallery-image {
+        position: static;
+        width: 90%;
+        height: 120px;
+        margin-bottom: -40px; /* Slight overlap effect */
+        transform: rotate(0deg) !important;
+        z-index: auto !important;
+    }
+    .gallery-image:hover {
+        transform: translateY(-5px);
+    }
+}
