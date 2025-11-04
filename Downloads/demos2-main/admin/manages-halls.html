@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Halls - Admin Panel</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="manage-events.html">View Events</a></li>
+                <li><a href="manage-appointments.html">Manage Appointments</a></li>
+                <li><a href="manage-halls.html" class="active">Manage Halls</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="content-container">
+            <h1>Manage Halls</h1>
+            <p>Add, view, or remove university halls available for event booking.</p>
+
+            <!-- Add new hall -->
+            <div class="add-hall">
+                <input type="text" id="newHallName" placeholder="Enter hall name">
+                <button id="addHallBtn">Add Hall</button>
+            </div>
+
+            <!-- Halls table -->
+            <table id="hallsTable">
+                <thead>
+                    <tr>
+                        <th>Hall Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Auditorium A</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Conference Room 1</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 University Event Portal - Admin Panel</p>
+    </footer>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
+

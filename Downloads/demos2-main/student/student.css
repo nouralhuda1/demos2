@@ -1,0 +1,552 @@
+
+/* --- Global Styles and Typography --- */
+.my-event body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fcff; /* Very Light Blue/Off-White Background */
+    color: #374151; /* Dark Gray Text */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container for main content to limit width on large screens */
+.my-event main,
+.my-event header,
+.my-event footer {
+    width: 95%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Header & Navigation --- */
+.my-event header {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #60A5FA; /* Light Blue Accent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.my-event header h1 {
+    font-size: 1.8em;
+    color: #1D4ED8; /* Dark Blue */
+    margin-bottom: 10px;
+}
+
+.my-event nav a {
+    color: #60A5FA; /* Light Blue Link */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.my-event nav a:hover {
+    background-color: #E0F2FE; /* Lighter blue on hover */
+    color: #1D4ED8;
+}
+
+.my-event header hr {
+    display: none; /* Hide the default horizontal rule */
+}
+
+/* --- Main Content and Form Layout --- */
+.my-event main {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows main content to push footer down */
+}
+
+.my-event main h2 {
+    font-size: 2em;
+    color: #1D4ED8;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E0F2FE;
+    padding-bottom: 10px;
+}
+
+/* --- Form Elements --- */
+.my-event #eventForm {
+    display: grid;
+    gap: 20px;
+}
+
+.my-event label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #4B5563;
+}
+
+.my-event input[type="text"],
+.my-event input[type="time"],
+.my-event input[type="date"],
+.my-event select,
+.my-event textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Crucial for padding/border calculation */
+    font-size: 1em;
+}
+
+.my-event input:focus,
+.my-event select:focus,
+.my-event textarea:focus {
+    border-color: #60A5FA;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.4); /* Light blue shadow ring */
+    outline: none;
+}
+
+.my-event textarea {
+    resize: vertical;
+}
+
+/* Custom styling for the select dropdown arrow */
+.my-event select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2360A5FA%22%20d%3D%22M287%20197.8L158.4%2069.2c-4.6-4.6-12.1-4.6-16.8%200L5.4%20197.8c-4.6%204.6-4.6%2012.1%200%2016.8l22.4%2022.4c4.6%204.6%2012.1%204.6%2016.8%200l93.2-93.2%2093.2%2093.2c4.6%204.6%2012.1%204.6%2016.8%200l22.4-22.4c4.7-4.7%204.7-12.1%200-16.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+    padding-right: 35px;
+}
+
+/* Submit Button */
+.my-event button[type="submit"] {
+    background-color: #1D4ED8; /* Darker Blue */
+    color: white;
+    font-weight: 700;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+    width: 100%;
+}
+
+.my-event button[type="submit"]:hover {
+    background-color: #3B82F6; /* Standard Blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(29, 78, 216, 0.4);
+}
+
+.my-event #dateStatus {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #6B7280;
+}
+
+/* --- Footer --- */
+.my-event footer {
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #6B7280;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.my-event footer hr {
+    display: none; /* Hide the default horizontal rule */
+}
+
+/* --- Responsiveness --- */
+@media (min-width: 640px) {
+    .my-event header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .my-event header h1 {
+        font-size: 2em;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .my-event header,
+    .my-event main {
+        padding: 20px;
+        border-radius: 0; /* Full width on very small screens */
+    }
+
+    .my-event header h1 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Global Variables and Base Styles --- */
+.student-event {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for links/accents */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-success: #10b981; /* Standard Green for University Events */
+    --color-primary: #3b82f6; /* Standard Blue for Student Events */
+}
+
+/* Base Body and Layout */
+.student-event body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blue-light); /* Light blue background */
+}
+
+/* --- Header/Navbar Adjustments (Bootstrap Overrides) --- */
+.student-event .navbar {
+    border-bottom: 3px solid var(--color-blue-accent);
+}
+
+/* Custom class override for the brand color */
+.student-event .navbar-brand {
+    color: var(--color-indigo-800) !important;
+    font-size: 1.25rem;
+}
+
+/* --- Main Site Layout Grid (Sidebar + Content) --- */
+.student-event #site-wrapper-grid {
+    /* Ensures the sidebar and main content fill the available space */
+    width: 100%;
+}
+
+/* --- Sidebar Styling --- */
+.student-event #sidebar-menu {
+    width: 250px; /* Fixed width for the sidebar */
+    flex-shrink: 0;
+    min-height: 100%;
+    background-color: #ffffff !important; /* White background for contrast */
+    border-right: 1px solid #e5e7eb;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.student-event #sidebar-menu h5 {
+    color: var(--color-indigo-800) !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0f2fe; /* Light blue divider */
+}
+
+.student-event .nav-link-sidebar {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    color: var(--color-indigo-700);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.student-event .nav-link-sidebar:hover {
+    background-color: var(--color-blue-light); /* Very light blue hover */
+    color: var(--color-indigo-800);
+    transform: translateX(3px);
+}
+
+/* Active or specific links */
+.student-event #make-event-link {
+    background-color: #dbeafe; /* Slightly darker light blue for emphasis */
+    color: var(--color-indigo-800);
+    font-weight: 700;
+}
+
+/* --- Main Content Area --- */
+.student-event #main-content {
+    background-color: transparent; /* Allows the body background to show */
+    padding: 30px !important;
+}
+
+.student-event #main-content h1 {
+    color: var(--color-indigo-800) !important;
+    font-size: 2.25rem;
+}
+
+/* --- Event Card Styling --- */
+.student-event .event-card {
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student-event .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-event .event-card .card-title {
+    font-size: 1.15rem;
+}
+
+/* University Hosted Card Specifics (Success/Green Theme) */
+.student-event .event-card.uni-hosted {
+    border-left: 5px solid var(--color-success);
+}
+
+/* Student Hosted Card Specifics (Primary/Blue Theme) */
+.student-event .event-card.student-hosted {
+    border-left: 5px solid var(--color-primary);
+}
+
+.student-event .card-text.small {
+    color: #9ca3af !important; /* Lighter text for dates/time */
+}
+
+/* Sign Up Button hover effect */
+.student-event .sign-up-btn:hover {
+    background-color: var(--color-indigo-800);
+    border-color: var(--color-indigo-800);
+}
+
+/* --- Footer --- */
+.student-event footer {
+    background-color: #2c3e50 !important; /* Darker footer */
+    color: #ecf0f1 !important;
+}
+
+/* --- Responsiveness for Sidebar --- */
+@media (max-width: 991px) { /* Adjusts for Bootstrap's lg breakpoint */
+    .student-event #site-wrapper-grid {
+        flex-direction: column;
+    }
+
+    .student-event #sidebar-menu {
+        width: 100%; /* Sidebar takes full width */
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Adjust main content padding on mobile */
+    .student-event #main-content {
+        padding: 20px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- Custom Color Variables --- */
+.student-register {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles/buttons */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for borders/links */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-gray-dark: #2c3e50; /* Dark for footer */
+}
+
+/* --- Base Layout --- */
+.student-register body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blue-light); /* Light blue background */
+}
+
+/* --- Bootstrap Button and Link Overrides --- */
+
+/* Custom Indigo Button Style */
+.student-register .btn-indigo {
+    background-color: var(--color-indigo-800);
+    border-color: var(--color-indigo-800);
+    color: white;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.student-register .btn-indigo:hover {
+    background-color: #3b82f6; /* Standard Blue on hover */
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Custom Text Color Utility Overrides */
+.student-register .text-indigo-800 {
+    color: var(--color-indigo-800) !important;
+}
+
+.student-register .text-indigo-700 {
+    color: var(--color-indigo-700) !important;
+}
+
+/* --- Header/Navbar Styling --- */
+.student-register #main-header {
+    border-bottom: 3px solid var(--color-blue-accent);
+    background-color: #ffffff !important;
+}
+
+.student-register .navbar-brand {
+    color: var(--color-indigo-800) !important;
+    font-size: 1.25rem;
+}
+
+/* --- Main Content: Form Card --- */
+.student-register #content {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+.student-register .card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.student-register .card-title {
+    font-size: 2rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0f2fe; /* Very light blue separator */
+}
+
+/* Field Labels and Inputs */
+.student-register .form-label {
+    color: var(--color-indigo-700);
+}
+
+.student-register .form-control:focus {
+    border-color: var(--color-blue-accent);
+    box-shadow: 0 0 0 0.25rem rgba(96, 165, 250, 0.25); /* Light blue focus ring */
+}
+
+/* Separator for Password Section */
+.student-register #registrationForm .border-top {
+    border-color: #d1d5db !important;
+}
+
+/* --- Footer --- */
+.student-register footer {
+    background-color: var(--color-gray-dark) !important;
+    color: #ecf0f1 !important;
+}
+/* --- Custom Color Variables --- */
+.student-register {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles/buttons */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for borders/links */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-gray-dark: #2c3e50; /* Dark for footer */
+}
+
+/* --- Base Layout --- */
+.student-register {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blue-light); /* Light blue background */
+}
+
+/* --- Bootstrap Button and Link Overrides --- */
+
+/* Custom Indigo Button Style */
+.student-register .btn-indigo {
+    background-color: var(--color-indigo-800);
+    border-color: var(--color-indigo-800);
+    color: white;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.student-register .btn-indigo:hover {
+    background-color: #3b82f6; /* Standard Blue on hover */
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Custom Text Color Utility Overrides */
+.student-register .text-indigo-800 {
+    color: var(--color-indigo-800) !important;
+}
+
+.student-register .text-indigo-700 {
+    color: var(--color-indigo-700) !important;
+}
+
+/* --- Header/Navbar Styling --- */
+.student-register #main-header {
+    border-bottom: 3px solid var(--color-blue-accent);
+    background-color: #ffffff !important;
+}
+
+.student-register .navbar-brand {
+    color: var(--color-indigo-800) !important;
+    font-size: 1.25rem;
+}
+
+/* --- Main Content: Form Card --- */
+.student-register #content {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+.student-register .card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.student-register .card-title {
+    font-size: 2rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0f2fe; /* Very light blue separator */
+}
+
+/* Field Labels and Inputs */
+.student-register .form-label {
+    color: var(--color-indigo-700);
+}
+
+.student-register .form-control:focus {
+    border-color: var(--color-blue-accent);
+    box-shadow: 0 0 0 0.25rem rgba(96, 165, 250, 0.25); /* Light blue focus ring */
+}
+
+/* Separator for Password Section */
+.student-register #registrationForm .border-top {
+    border-color: #d1d5db !important;
+}
+
+/* --- Footer --- */
+.student-register footer {
+    background-color: var(--color-gray-dark) !important;
+    color: #ecf0f1 !important;
+}
+
+
+
+
