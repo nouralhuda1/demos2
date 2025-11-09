@@ -15,9 +15,4 @@ function handleLogin(event) {
     setTimeout(() => window.location.href = '03_student_dashboard.html', 1000);
 }
 
-// --- Event Sign Up ---
-function signUpEvent(btn, eventName) {
-    btn.textContent = 'Signed Up';
-    btn.disabled = true;
-    alert(`You signed up for ${eventName}`);
-}
+
