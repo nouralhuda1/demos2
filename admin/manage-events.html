@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Events - Admin Panel</title>
-    <!-- Link to Admin CSS -->
-    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
-<body>
+<body class="events-page">
 
     <!-- HEADER -->
-    <header>
-        <nav>
+    <header class="admin-header">
+        <nav class="admin-nav">
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="view-events.html" class="active">View Events</a></li>
-                <li><a href="manage-events.html">Manage Events</a></li>
                 <li><a href="manage-appointments.html">Manage Appointments</a></li>
                 <li><a href="manages-halls.html">Manage Halls</a></li>
             </ul>
@@ -23,33 +21,35 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
+    <main class="admin-main">
         <section class="content-container">
             <h1>All Events</h1>
             <p>Below is a list of all scheduled events at the university.</p>
             
-            <table>
+            <table class="events-table">
                 <thead>
                     <tr>
                         <th>Event Name</th>
                         <th>Date</th>
                         <th>Organizer</th>
                         <th>Status</th>
-                         <th>Halls</th>
+                        <th>Halls</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="eventsBody">
                     <tr>
                         <td>Academic Seminar</td>
                         <td>Oct 25, 2025</td>
                         <td>Alice Johnson</td>
-                        <td>Approved</td>
+                        <td class="status-approved">Approved</td>
+                        <td>Hall 1</td>
                     </tr>
                     <tr>
                         <td>Workshop</td>
                         <td>Oct 27, 2025</td>
                         <td>Bob Smith</td>
-                        <td>Pending</td>
+                        <td class="status-pending">Pending</td>
+                        <td>Hall 2</td>
                     </tr>
                 </tbody>
             </table>
@@ -57,24 +57,14 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="admin-footer">
         <p>&copy; 2025 University Event Portal - Admin Panel</p>
     </footer>
 
     <!-- JS Link -->
-    <script src="assets/js/admin.js"></script>
+    <script src="admin.js"></script>
     <script>
-        // Logout functionality
-        document.getElementById("logoutBtn").addEventListener("click", function(e) {
-            e.preventDefault();
-
-            // Optional: clear any stored login/session data
-            sessionStorage.clear();
-            localStorage.clear();
-
-            // Redirect to login page
-            window.location.href = "admin_login.html";
-        });
+        
     </script>
 </body>
 </html>

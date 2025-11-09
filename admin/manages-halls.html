@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Halls - Admin Panel</title>
-    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
-<body>
+<body class="halls-page">
 
     <!-- HEADER -->
-    <header>
-        <nav>
+    <header class="admin-header">
+        <nav class="admin-nav">
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="manage-events.html">View Events</a></li>
                 <li><a href="manage-appointments.html">Manage Appointments</a></li>
-                <li><a href="manage-halls.html" class="active">Manage Halls</a></li>
-                
+                <li><a href="manages-halls.html" class="active">Manage Halls</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
+    <main class="admin-main">
         <section class="content-container">
             <h1>Manage Halls</h1>
             <p>Add, view, or remove university halls available for event booking.</p>
@@ -34,7 +33,7 @@
             </div>
 
             <!-- Halls table -->
-            <table id="hallsTable">
+            <table class="halls-table" id="hallsTable">
                 <thead>
                     <tr>
                         <th>Hall Name</th>
@@ -56,11 +55,12 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="admin-footer">
         <p>&copy; 2025 University Event Portal - Admin Panel</p>
     </footer>
 
-    <script src="assets/js/admin.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
+
 
