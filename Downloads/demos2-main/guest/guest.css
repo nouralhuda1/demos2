@@ -1,0 +1,215 @@
+
+/* --- Custom Color Variables (Adapted from Reference) --- */
+:root {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles/buttons */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for borders/links */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-gray-dark: #2c3e50; /* Dark for footer */
+    --color-white: #ffffff;
+    --color-separator: #e0f2fe; /* Very light blue separator */
+}
+
+/* --- Base Layout and Body --- */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font */
+    background-color: var(--color-blue-light);
+    color: var(--color-indigo-700);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: var(--color-white);
+    color: var(--color-indigo-700);
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column; /* Stack title and nav on small screens */
+    align-items: center;
+    border-bottom: 3px solid var(--color-blue-accent);
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    color: var(--color-indigo-800);
+    text-align: center;
+    font-weight: 700;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav a {
+    color: var(--color-indigo-800);
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 0;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+header nav a:hover {
+    color: var(--color-blue-accent);
+    text-decoration: underline;
+}
+
+/* Style for the active/current page link */
+header nav a.active {
+    color: var(--color-blue-accent);
+    text-decoration: underline;
+}
+
+/* Hide the original HR in the header */
+header hr {
+    display: none;
+}
+
+/* Desktop Layout for Header */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header h1 {
+        margin: 0;
+    }
+}
+
+
+/* --- Main Content: Card Adaptation for About Us and Contact Us --- */
+main {
+    flex-grow: 1; /* Pushes footer to the bottom */
+    padding: 30px 5%;
+    max-width: 800px; 
+    margin: 40px auto;
+    background: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Matching the card shadow */
+}
+
+main h2 {
+    color: var(--color-indigo-800);
+    font-size: 2rem;
+    padding-bottom: 15px;
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-separator);
+    margin-bottom: 20px;
+}
+
+main h3 {
+    color: var(--color-indigo-800);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+main p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Contact List Styling */
+.contact-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    background-color: var(--color-blue-light);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-blue-accent);
+}
+
+.contact-list li a {
+    color: var(--color-indigo-800);
+    text-decoration: none;
+}
+.contact-list li a:hover {
+    color: var(--color-blue-accent);
+    text-decoration: underline;
+}
+
+/* Form Styling */
+.contact-form-section form {
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form-section label {
+    font-weight: 600;
+    color: var(--color-indigo-800);
+    margin-top: 10px;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    transition: border-color 0.3s;
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+    border-color: var(--color-blue-accent);
+    outline: none;
+    box-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+}
+
+.contact-form-section textarea {
+    resize: vertical; /* Allows resizing only vertically */
+}
+
+.contact-form-section button[type="submit"] {
+    background-color: var(--color-indigo-800);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    align-self: start;
+    margin-top: 10px;
+}
+
+.contact-form-section button[type="submit"]:hover {
+    background-color: #3152c1; /* Slightly darker indigo on hover */
+    transform: translateY(-1px);
+}
+
+
+/* Hide the HR before the footer */
+main + hr {
+    display: none;
+}
+
+/* --- Footer Styling --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-gray-dark); /* Dark gray background */
+    color: #ecf0f1; /* Light text */
+    font-size: 0.9em;
+    margin-top: auto; /* Ensures footer sticks to the bottom */
+    border-top: 5px solid var(--color-indigo-800);
+}
+
+footer p {
+    margin: 0;
+}

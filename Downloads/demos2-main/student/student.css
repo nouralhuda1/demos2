@@ -1,361 +1,166 @@
 
-/* --- Global Styles and Typography --- */
-.my-event body {
+/* student.css */
+
+/* --- Custom Color Variables (Adapted from Reference) --- */
+:root {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles/buttons */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for borders/links */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-gray-dark: #2c3e50; /* Dark for footer */
+    --color-white: #ffffff;
+    --color-separator: #e0f2fe; /* Very light blue separator */
+}
+
+/* --- Base Layout and Body --- */
+body.my-event {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fcff; /* Very Light Blue/Off-White Background */
-    color: #374151; /* Dark Gray Text */
+    background-color: var(--color-blue-light); /* Matching the light blue background */
+    color: var(--color-indigo-700);
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- Header Styling (Adapting the .navbar styles) --- */
+header {
+    background-color: var(--color-white); /* White background for header */
+    color: var(--color-indigo-700);
+    padding: 15px 5%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    border-bottom: 3px solid var(--color-blue-accent); /* Blue accent border */
 }
 
-/* Container for main content to limit width on large screens */
-.my-event main,
-.my-event header,
-.my-event footer {
-    width: 95%;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-indigo-800); /* Dark Indigo for the main portal title */
 }
 
-/* --- Header & Navigation --- */
-.my-event header {
-    background-color: #ffffff;
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid #60A5FA; /* Light Blue Accent */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.my-event header h1 {
-    font-size: 1.8em;
-    color: #1D4ED8; /* Dark Blue */
-    margin-bottom: 10px;
-}
-
-.my-event nav a {
-    color: #60A5FA; /* Light Blue Link */
+header nav a {
+    color: var(--color-indigo-800);
     text-decoration: none;
+    margin-left: 15px;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: color 0.2s ease;
 }
 
-.my-event nav a:hover {
-    background-color: #E0F2FE; /* Lighter blue on hover */
-    color: #1D4ED8;
+header nav a:hover {
+    color: var(--color-blue-accent);
 }
 
-.my-event header hr {
-    display: none; /* Hide the default horizontal rule */
+/* Remove the HR in the header as the border-bottom looks cleaner */
+header hr {
+    display: none;
 }
 
-/* --- Main Content and Form Layout --- */
-.my-event main {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    flex-grow: 1; /* Allows main content to push footer down */
+/* --- Main Content: Form Card Adaptation --- */
+main {
+    padding: 30px 5%;
+    max-width: 600px; /* Keeping it tighter like a typical registration/event card */
+    margin: 40px auto;
+    background: var(--color-white);
+    border-radius: 15px; /* Matching the card border-radius */
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Matching the card shadow */
 }
 
-.my-event main h2 {
-    font-size: 2em;
-    color: #1D4ED8;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #E0F2FE;
+main h2 {
+    color: var(--color-indigo-800);
+    font-size: 2rem;
     padding-bottom: 10px;
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-separator); /* Very light blue separator */
 }
 
-/* --- Form Elements --- */
-.my-event #eventForm {
-    display: grid;
-    gap: 20px;
+/* --- Form Styling --- */
+#eventForm {
+    /* Using standard block layout since the original HTML uses <br> */
+    padding-top: 20px;
 }
 
-.my-event label {
+#eventForm label {
+    font-weight: bold;
     display: block;
-    font-weight: 600;
+    margin-top: 15px;
     margin-bottom: 5px;
-    color: #4B5563;
+    color: var(--color-indigo-700); /* Matching the form-label color */
 }
 
-.my-event input[type="text"],
-.my-event input[type="time"],
-.my-event input[type="date"],
-.my-event select,
-.my-event textarea {
+#eventForm input[type="text"],
+#eventForm input[type="time"],
+#eventForm input[type="date"],
+#eventForm textarea,
+#eventForm select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    box-sizing: border-box; /* Crucial for padding/border calculation */
+    padding: 10px 12px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 6px;
+    box-sizing: border-box;
     font-size: 1em;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.my-event input:focus,
-.my-event select:focus,
-.my-event textarea:focus {
-    border-color: #60A5FA;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.4); /* Light blue shadow ring */
-    outline: none;
+#eventForm input:focus,
+#eventForm textarea:focus,
+#eventForm select:focus {
+    border-color: var(--color-blue-accent);
+    outline: 0;
+    /* Light blue focus ring matching .form-control:focus */
+    box-shadow: 0 0 0 0.25rem rgba(96, 165, 250, 0.25);
 }
 
-.my-event textarea {
+#eventForm textarea {
     resize: vertical;
 }
 
-/* Custom styling for the select dropdown arrow */
-.my-event select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2360A5FA%22%20d%3D%22M287%20197.8L158.4%2069.2c-4.6-4.6-12.1-4.6-16.8%200L5.4%20197.8c-4.6%204.6-4.6%2012.1%200%2016.8l22.4%2022.4c4.6%204.6%2012.1%204.6%2016.8%200l93.2-93.2%2093.2%2093.2c4.6%204.6%2012.1%204.6%2016.8%200l22.4-22.4c4.7-4.7%204.7-12.1%200-16.8z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-    background-size: 12px auto;
-    padding-right: 35px;
-}
-
-/* Submit Button */
-.my-event button[type="submit"] {
-    background-color: #1D4ED8; /* Darker Blue */
-    color: white;
-    font-weight: 700;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
-    width: 100%;
-}
-
-.my-event button[type="submit"]:hover {
-    background-color: #3B82F6; /* Standard Blue on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(29, 78, 216, 0.4);
-}
-
-.my-event #dateStatus {
+#dateStatus {
     font-size: 0.9em;
+    color: #9ca3af; /* A softer gray */
     margin-top: 5px;
-    color: #6B7280;
 }
 
-/* --- Footer --- */
-.my-event footer {
-    padding: 15px 30px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #6B7280;
-    margin-top: auto; /* Pushes the footer to the bottom */
-}
-
-.my-event footer hr {
-    display: none; /* Hide the default horizontal rule */
-}
-
-/* --- Responsiveness --- */
-@media (min-width: 640px) {
-    .my-event header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .my-event header h1 {
-        font-size: 2em;
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .my-event header,
-    .my-event main {
-        padding: 20px;
-        border-radius: 0; /* Full width on very small screens */
-    }
-
-    .my-event header h1 {
-        font-size: 1.5em;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- Global Variables and Base Styles --- */
-.student-event {
-    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles */
-    --color-indigo-700: #374151; /* Darker text */
-    --color-blue-accent: #60a5fa; /* Medium Light Blue for links/accents */
-    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
-    --color-success: #10b981; /* Standard Green for University Events */
-    --color-primary: #3b82f6; /* Standard Blue for Student Events */
-}
-
-/* Base Body and Layout */
-.student-event body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-blue-light); /* Light blue background */
-}
-
-/* --- Header/Navbar Adjustments (Bootstrap Overrides) --- */
-.student-event .navbar {
-    border-bottom: 3px solid var(--color-blue-accent);
-}
-
-/* Custom class override for the brand color */
-.student-event .navbar-brand {
-    color: var(--color-indigo-800) !important;
-    font-size: 1.25rem;
-}
-
-/* --- Main Site Layout Grid (Sidebar + Content) --- */
-.student-event #site-wrapper-grid {
-    /* Ensures the sidebar and main content fill the available space */
-    width: 100%;
-}
-
-/* --- Sidebar Styling --- */
-.student-event #sidebar-menu {
-    width: 250px; /* Fixed width for the sidebar */
-    flex-shrink: 0;
-    min-height: 100%;
-    background-color: #ffffff !important; /* White background for contrast */
-    border-right: 1px solid #e5e7eb;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.student-event #sidebar-menu h5 {
-    color: var(--color-indigo-800) !important;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e0f2fe; /* Light blue divider */
-}
-
-.student-event .nav-link-sidebar {
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    color: var(--color-indigo-700);
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.2s ease-in-out;
-    font-weight: 500;
-}
-
-.student-event .nav-link-sidebar:hover {
-    background-color: var(--color-blue-light); /* Very light blue hover */
-    color: var(--color-indigo-800);
-    transform: translateX(3px);
-}
-
-/* Active or specific links */
-.student-event #make-event-link {
-    background-color: #dbeafe; /* Slightly darker light blue for emphasis */
-    color: var(--color-indigo-800);
-    font-weight: 700;
-}
-
-/* --- Main Content Area --- */
-.student-event #main-content {
-    background-color: transparent; /* Allows the body background to show */
-    padding: 30px !important;
-}
-
-.student-event #main-content h1 {
-    color: var(--color-indigo-800) !important;
-    font-size: 2.25rem;
-}
-
-/* --- Event Card Styling --- */
-.student-event .event-card {
-    border-radius: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.student-event .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.student-event .event-card .card-title {
-    font-size: 1.15rem;
-}
-
-/* University Hosted Card Specifics (Success/Green Theme) */
-.student-event .event-card.uni-hosted {
-    border-left: 5px solid var(--color-success);
-}
-
-/* Student Hosted Card Specifics (Primary/Blue Theme) */
-.student-event .event-card.student-hosted {
-    border-left: 5px solid var(--color-primary);
-}
-
-.student-event .card-text.small {
-    color: #9ca3af !important; /* Lighter text for dates/time */
-}
-
-/* Sign Up Button hover effect */
-.student-event .sign-up-btn:hover {
+/* --- Button Styling (Matching .btn-indigo) --- */
+#eventForm button[type="submit"] {
     background-color: var(--color-indigo-800);
     border-color: var(--color-indigo-800);
+    color: white;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 25px;
+    width: 100%; /* Make it full width like a typical card button */
 }
 
-/* --- Footer --- */
-.student-event footer {
-    background-color: #2c3e50 !important; /* Darker footer */
-    color: #ecf0f1 !important;
+#eventForm button[type="submit"]:hover {
+    background-color: #3b82f6; /* Standard Blue on hover */
+    border-color: #3b82f6;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    transform: translateY(-1px);
 }
 
-/* --- Responsiveness for Sidebar --- */
-@media (max-width: 991px) { /* Adjusts for Bootstrap's lg breakpoint */
-    .student-event #site-wrapper-grid {
-        flex-direction: column;
-    }
-
-    .student-event #sidebar-menu {
-        width: 100%; /* Sidebar takes full width */
-        min-height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e5e7eb;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Adjust main content padding on mobile */
-    .student-event #main-content {
-        padding: 20px !important;
-    }
+/* --- Footer Styling --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-gray-dark); /* Dark gray background */
+    color: #ecf0f1; /* Light text */
+    font-size: 0.9em;
 }
 
+/* HR before footer */
+main + hr {
+    display: none; /* Removed the HR above the footer for a cleaner separation */
+}
 
-
-
+footer p {
+    margin: 0;
+}
 
 
 
@@ -550,3 +355,178 @@
 
 
 
+
+
+
+
+
+/* student.css - Applied to student-event HTML structure */
+
+/* --- Custom Color Variables (Matching the established palette) --- */
+:root {
+    --color-indigo-800: #1e40af; /* Dark Indigo Blue for main titles/buttons */
+    --color-indigo-700: #374151; /* Darker text */
+    --color-blue-accent: #60a5fa; /* Medium Light Blue for borders/links */
+    --color-blue-light: #eff6ff; /* Very Light Blue for backgrounds */
+    --color-gray-dark: #2c3e50; /* Dark for footer */
+    --color-white: #ffffff;
+    --color-separator: #e0f2fe; /* Very light blue separator */
+    --color-success: #28a745; /* Standard green for Uni events */
+    --color-primary: #0d6efd; /* Standard blue for Student events */
+}
+
+/* --- Base Layout and Body --- */
+body.student-event {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blue-light); /* Light blue background for the page */
+    color: var(--color-indigo-700);
+}
+
+/* Re-setting Bootstrap's utility classes to match the palette */
+.text-indigo-800 {
+    color: var(--color-indigo-800) !important;
+}
+.text-indigo-700 {
+    color: var(--color-indigo-700) !important;
+}
+.bg-dark {
+    background-color: var(--color-gray-dark) !important;
+}
+
+/* --- Header / Navbar Styling --- */
+.navbar {
+    background-color: var(--color-white) !important;
+    border-bottom: 3px solid var(--color-blue-accent); /* Apply blue accent border */
+}
+
+.navbar-brand {
+    /* Title is already styled in HTML with text-indigo-800 */
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-indigo-700) !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--color-indigo-800) !important;
+}
+
+/* --- Main Site Wrapper Grid (Sidebar + Content) --- */
+#site-wrapper-grid {
+    /* This ensures the sidebar and content fill the remaining height */
+    min-height: calc(100vh - 80px); /* Adjust '80px' based on your header's actual height */
+}
+
+/* --- Sidebar Styling --- */
+#sidebar-menu {
+    width: 250px; /* Fixed width for the sidebar */
+    min-width: 250px;
+    background-color: var(--color-white) !important; /* White sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05) !important;
+}
+
+#sidebar-menu h5 {
+    color: var(--color-indigo-800);
+}
+
+.nav-link-sidebar {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    color: var(--color-indigo-700);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.nav-link-sidebar i {
+    font-size: 1.1em;
+}
+
+.nav-link-sidebar:hover {
+    background-color: var(--color-blue-light); /* Light blue hover background */
+    color: var(--color-indigo-800);
+}
+
+/* Highlight the link for the page the user is NOT currently on (e.g., Make an Event) */
+#make-event-link {
+    /* This link takes them to the other page, so we style it like a button/CTA */
+    background-color: var(--color-indigo-800);
+    color: var(--color-white) !important;
+}
+#make-event-link:hover {
+    background-color: var(--color-blue-accent);
+    color: var(--color-white) !important;
+}
+
+
+/* --- Main Content Styling --- */
+#main-content {
+    background-color: var(--color-blue-light); /* Keeps the main area light blue */
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+/* Section Headings */
+section h2 {
+    /* Using standard section titles from the HTML */
+    border-color: var(--color-separator) !important;
+    font-size: 1.75rem;
+}
+
+/* --- Event Card Styling (Matching the previous "card" style) --- */
+.event-card {
+    border-radius: 10px; /* Slight rounder corners */
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important; /* Card shadow match */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.card-text.small {
+    color: #9ca3af !important; /* Softer text for metadata */
+}
+
+/* Uni Hosted Event Specific Styling */
+.event-card.uni-hosted {
+    border-left: 5px solid var(--color-success); /* Green accent strip */
+}
+
+/* Student Hosted Event Specific Styling */
+.event-card.student-hosted {
+    border-left: 5px solid var(--color-primary); /* Bootstrap Blue accent strip */
+}
+
+/* --- Footer Styling --- */
+footer {
+    /* Bootstrap utility classes handle background and text color here (bg-dark, text-white) */
+    background-color: var(--color-gray-dark) !important;
+    font-size: 0.85em;
+}
+
+/* --- Responsive Adjustments for Sidebar --- */
+@media (max-width: 992px) {
+    #site-wrapper-grid {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+    }
+    #sidebar-menu {
+        width: 100%;
+        min-width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+    }
+}

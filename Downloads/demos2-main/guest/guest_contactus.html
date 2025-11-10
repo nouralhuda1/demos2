@@ -1,9 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - University Event Portal</title>
+    
+    <!-- This links your HTML to the external guest.css file -->
+    <link rel="stylesheet" href="guest.css">
 </head>
 <body>
 
@@ -13,38 +17,42 @@
         <nav>
             <a href="guest_home.html">Home</a> |
             <a href="guest_about.html">About Us</a> |
-            <a href="guest_contactus.html">Contact Us</a> |
+            <a href="guest_contactus.html" class="active">Contact Us</a> |
             <a href="../student/student_register.html">Register</a>
         </nav>
         <hr>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="contact-page">
         <h2>Contact the Event Coordination Team</h2>
         <p>If you have questions about events or hosting opportunities, feel free to reach out to our university event administrators below:</p>
 
-        <ul>
-            <li><strong>Dr. Sarah Ahmed</strong> – Head of Student Affairs<br>Email: sarah.ahmed@university.edu</li>
-            <br>
-            <li><strong>Mr. James Miller</strong> – Event Coordinator<br>Email: james.miller@university.edu</li>
-            <br>
-            <li><strong>Ms. Lina Hassan</strong> – Student Event Support<br>Email: lina.hassan@university.edu</li>
-        </ul>
+        <!-- Contact List Section -->
+        <section class="contact-list">
+            <ul>
+                <li><strong>Dr. Sarah Ahmed</strong> – Head of Student Affairs<br>Email: <a href="mailto:sarah.ahmed@university.edu">sarah.ahmed@university.edu</a></li>
+                <li><strong>Mr. James Miller</strong> – Event Coordinator<br>Email: <a href="mailto:james.miller@university.edu">james.miller@university.edu</a></li>
+                <li><strong>Ms. Lina Hassan</strong> – Student Event Support<br>Email: <a href="mailto:lina.hassan@university.edu">lina.hassan@university.edu</a></li>
+            </ul>
+        </section>
 
-        <h3>Or send us a message:</h3>
-        <form>
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <h3>Or send us a message:</h3>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="email">Your Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" cols="40" required></textarea><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Message</button>
-        </form>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
 
     <hr>

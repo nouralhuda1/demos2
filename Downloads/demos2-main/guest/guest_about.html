@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - University Event Portal</title>
+    
+    <!-- This links your HTML to the external guest.css file -->
+    <link rel="stylesheet" href="guest.css">
 </head>
 <body>
 
@@ -11,12 +15,14 @@
     <header>
         <h1>University Event Portal</h1>
         <nav>
+            <!-- Note: I added a class="active" to highlight the current page -->
             <a href="guest_home.html">Home</a> |
-            <a href="guest_about.html">About Us</a> |
+            <a href="guest_about.html" class="active">About Us</a> |
             <a href="guest_contactus.html">Contact Us</a> |
             <a href="../student/student_register.html">Register</a>
         </nav>
-        <hr>
+        <!-- The original HR is kept for structure, but hidden by your CSS -->
+        <hr> 
     </header>
 
     <!-- Main Content -->
@@ -36,6 +42,7 @@
         </p>
     </main>
 
+    <!-- The HR before the footer is kept for structure, but hidden by your CSS -->
     <hr>
 
     <!-- Footer -->
