@@ -213,3 +213,349 @@ footer {
 footer p {
     margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   Guest Home Page Custom Styling
+   Matches overall color scheme and design from the reference CSS
+   ============================================================ */
+
+/* --- Color Variables (same palette for consistency) --- */
+:root {
+  --color-indigo-800: #1e40af;
+  --color-indigo-700: #374151;
+  --color-blue-accent: #60a5fa;
+  --color-blue-light: #eff6ff;
+  --color-gray-dark: #2c3e50;
+  --color-white: #ffffff;
+  --color-separator: #e0f2fe;
+}
+
+/* --- General Body --- */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-blue-light);
+  color: var(--color-indigo-700);
+  line-height: 1.6;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--color-indigo-800) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-white) !important;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-white) !important;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: var(--color-blue-accent);
+  color: var(--color-white) !important;
+}
+
+/* --- Hero Section --- */
+header {
+  background-color: var(--color-white);
+  text-align: center;
+  padding: 60px 15px;
+  border-bottom: 4px solid var(--color-blue-accent);
+}
+
+header img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  color: var(--color-indigo-800);
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+header p {
+  color: var(--color-indigo-700);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+header .btn-primary {
+  background-color: var(--color-indigo-800);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+header .btn-primary:hover {
+  background-color: #3152c1;
+  transform: translateY(-2px);
+}
+
+/* --- Upcoming Events --- */
+section {
+  margin-top: 60px;
+}
+
+section h2 {
+  color: var(--color-indigo-800);
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: var(--color-blue-accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.card {
+  border-radius: 15px !important;
+  border: none !important;
+  background-color: var(--color-white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: var(--color-indigo-800);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: var(--color-indigo-700);
+}
+
+.text-muted {
+  color: #6b7280 !important;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--color-gray-dark);
+  color: #ecf0f1;
+  border-top: 5px solid var(--color-indigo-800);
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 768px) {
+  header img {
+    width: 200px;
+    height: 200px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+
+
+
+/* ============================================================
+   University Event Portal - Guest Home Page
+   Matching the Indigo-Blue Theme from Reference
+   ============================================================ */
+
+/* --- Color Variables --- */
+:root {
+  --color-indigo-800: #1e40af;
+  --color-indigo-700: #374151;
+  --color-blue-accent: #60a5fa;
+  --color-blue-light: #eff6ff;
+  --color-gray-dark: #2c3e50;
+  --color-white: #ffffff;
+}
+
+/* --- Base --- */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-blue-light);
+  color: var(--color-indigo-700);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--color-indigo-800) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-white) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-white) !important;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 6px 12px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: var(--color-blue-accent);
+  color: var(--color-white) !important;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background-color: var(--color-white);
+  text-align: center;
+  padding: 70px 15px;
+  border-bottom: 4px solid var(--color-blue-accent);
+}
+
+.hero h1 {
+  color: var(--color-indigo-800);
+  font-weight: 800;
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: var(--color-indigo-700);
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero .btn-primary {
+  background-color: var(--color-indigo-800);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #3152c1;
+  transform: translateY(-2px);
+}
+
+/* --- Upcoming Events --- */
+section h2 {
+  color: var(--color-indigo-800);
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-blue-accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 15px !important;
+  border: none !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: var(--color-indigo-800);
+  font-weight: 700;
+}
+
+.card-text {
+  color: var(--color-indigo-700);
+}
+
+.text-muted {
+  color: #6b7280 !important;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--color-gray-dark);
+  color: #ecf0f1;
+  border-top: 5px solid var(--color-indigo-800);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 15px;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  .card {
+    margin-bottom: 25px;
+  }
+}
